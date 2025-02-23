@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ### 3️⃣ Run the Web App
 
 ```sh
-streamlit run app.py
+streamlit run web.py
 ```
 
 This will open the web app in your default browser.
