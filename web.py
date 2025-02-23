@@ -21,8 +21,17 @@ def set_background(image_url):
     <style>
     [data-testid="stAppViewContainer"] {{
         background: url("{image_url}") no-repeat center center fixed;
-        background-size: cover;
+        background-size: contain; /* Ensures full image is visible */
+        background-position: center;
     }}
+
+    @media (max-width: 768px) {{
+        [data-testid="stAppViewContainer"] {{
+            background-size: 100% auto; /* Ensures image scales properly on mobile */
+            background-attachment: scroll; /* Avoids zoom issues on mobile */
+        }}
+    }}
+
     [data-testid="stSidebar"] {{
         background-color: rgba(255, 255, 255, 0.5);
     }}
