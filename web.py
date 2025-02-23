@@ -1,5 +1,21 @@
+import numpy as np
+import pickle 
 import streamlit as st
 
+import os
+model_path = os.path.join(os.path.dirname(__file__), "trained_model.sav")
+loaded_model = pickle.load(open(model_path, "rb"))
+
+def heart_disease_pred(input_data):
+    input_data_as_numpy = np.asarray(input_data, dtype=np.float64)
+    input_data_reshaped = input_data_as_numpy.reshape(1, -1)
+    prediction = loaded_model.predict(input_data_reshaped)
+    
+    if prediction[0] == "Presence":
+        return "The patient is likely to have heart disease."
+    else:
+        return "The patient is unlikely to have heart disease."
+  
 def set_background(image_url):
     page_bg = f"""
     <style>
