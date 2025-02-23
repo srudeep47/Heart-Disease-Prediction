@@ -21,17 +21,8 @@ def set_background(image_url):
     <style>
     [data-testid="stAppViewContainer"] {{
         background: url("{image_url}") no-repeat center center fixed;
-        background-size: contain; /* Ensures full image is visible */
-        background-position: center;
+        background-size: cover;
     }}
-
-    @media (max-width: 768px) {{
-        [data-testid="stAppViewContainer"] {{
-            background-size: 100% auto; /* Ensures image scales properly on mobile */
-            background-attachment: scroll; /* Avoids zoom issues on mobile */
-        }}
-    }}
-
     [data-testid="stSidebar"] {{
         background-color: rgba(255, 255, 255, 0.5);
     }}
@@ -58,6 +49,7 @@ def set_background(image_url):
     </style>
     """
     st.markdown(page_bg, unsafe_allow_html=True)
+
 
 set_background("https://slidescorner.com/wp-content/uploads/2022/10/01-Medical-Blue-Heart-Beat-Abstract-Lines-free-PPT-Background-by-SlidesCorner--500x281.jpg")
 
