@@ -22,7 +22,7 @@ This is a **machine learning-based web app** built with **Streamlit** that predi
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/your-username/heart-disease-prediction.git
+git clone https://github.com/srudeep47/heart-disease-prediction.git
 cd heart-disease-prediction
 ```
 
