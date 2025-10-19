@@ -11,32 +11,14 @@ def heart_disease_pred(input_data):
     input_data_reshaped = input_data_as_numpy.reshape(1, -1)
     prediction = loaded_model.predict(input_data_reshaped)
     
-    if prediction[0] == "Presence":
+    if prediction[0] == 1:
         return "The patient is likely to have heart disease."
     else:
         return "The patient is unlikely to have heart disease."
     
 
-
-def set_background(image_url):
-    page_bg = f"""
-    <style>
-    [data-testid="stAppViewContainer"] {{
-        background: url("{image_url}") no-repeat center center fixed;
-        background-size: cover;
-    }}
-    [data-testid="stSidebar"] {{
-        background-color: rgba(255, 255, 255, 0.5);
-    }}
-    </style>
-    """
-    st.markdown(page_bg, unsafe_allow_html=True)
-
-set_background("https://slidescorner.com/wp-content/uploads/2022/10/01-Medical-Blue-Heart-Beat-Abstract-Lines-free-PPT-Background-by-SlidesCorner--500x281.jpg")
-
 def main():
-
-    st.title("Heart Disease Prediction")
+    st.markdown("<h1 style='text-align: center; color: red;'>Heart Disease Prediction</h1>", unsafe_allow_html=True)
 
     Age = st.text_input("Enter your Age", key="age") 
     Gender = st.text_input("Enter your Gender (1 = Male, 0 = Female)", key="gender") 
