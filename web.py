@@ -16,42 +16,6 @@ def heart_disease_pred(input_data):
     else:
         return "The patient is unlikely to have heart disease."
   
-def set_background(image_url):
-    page_bg = f"""
-    <style>
-    [data-testid="stAppViewContainer"] {{
-        background: url("{image_url}") no-repeat center center fixed;
-        background-size: cover;
-    }}
-    [data-testid="stSidebar"] {{
-        background-color: rgba(255, 255, 255, 0.5);
-    }}
-
-    input, textarea, select {{
-        background-color: rgba(255, 255, 255, 0.9) !important;
-        color: black !important;
-    }}
-
-    label {{
-        color: black !important;
-    }}
-
-    div.stButton > button {{
-        background-color: red !important;
-        color: white !important;
-        border-radius: 10px !important;
-        border: 2px solid white !important;
-    }}
-
-    h1 {{
-        color: red !important;
-    }}
-    </style>
-    """
-    st.markdown(page_bg, unsafe_allow_html=True)
-
-
-set_background("https://slidescorner.com/wp-content/uploads/2022/10/01-Medical-Blue-Heart-Beat-Abstract-Lines-free-PPT-Background-by-SlidesCorner--500x281.jpg")
 
 def main():
     st.markdown("<h1 style='text-align: center; color: red;'>Heart Disease Prediction</h1>", unsafe_allow_html=True)
